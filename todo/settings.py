@@ -40,6 +40,16 @@ INSTALLED_APPS = [
     'todos'
 ]
 
+DJANGO_APPS = [
+    'rest_framework',
+    'django_extensions',
+    'django.utils.six',
+    'corsheaders',
+    'drf_yasg',
+    'django_filters',
+]
+INSTALLED_APPS.extend(DJANGO_APPS)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
