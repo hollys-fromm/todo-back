@@ -12,4 +12,3 @@ class Todo(models.Model):
     title = models.CharField(max_length=20)
     detail = models.TextField()
     status = models.CharField(max_length=10, choices=Status.choices)
-
