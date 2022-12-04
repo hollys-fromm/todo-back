@@ -13,5 +13,5 @@ class Todo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=20)
     detail = models.TextField()
-    status = models.CharField(max_length=10, choices=Status.choices)
+    status = models.CharField(max_length=10, choices=Status.choices, default=Status.TODO)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
