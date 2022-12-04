@@ -13,8 +13,11 @@ class TodoSerializer(ModelSerializer):
         model = Todo
         fields = ('id', 'title', 'detail', 'status', 'user')
 
-    def validate_user(self, *args, **kwargs):
-        return self.context['request'].user
+    def save(self, **kwargs):
+        super().save(**{
+            'user': self.context['request'].user,
+            **kwargs,
+        })
 
 
 class TodoViewSet(ModelViewSet):
@@ -24,4 +27,4 @@ class TodoViewSet(ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        self.queryset.filter(user=self.request.user)
+        return self.queryset.filter(user=self.request.user)
