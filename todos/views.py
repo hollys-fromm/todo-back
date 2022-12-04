@@ -13,6 +13,9 @@ class TodoSerializer(ModelSerializer):
         model = Todo
         fields = ('id', 'title', 'detail', 'status', 'user')
 
+    def validate_user(self, *args, **kwargs):
+        return self.context['request'].user
+
 
 class TodoViewSet(ModelViewSet):
     queryset = Todo.objects
