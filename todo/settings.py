@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todos'
+    'todos',
+    'users',
 ]
 
 DJANGO_APPS = [
@@ -50,7 +51,7 @@ DJANGO_APPS = [
 ]
 INSTALLED_APPS.extend(DJANGO_APPS)
 
-CORS_ALLOWED_ORIGINS = ['*']
+# CORS_ALLOWED_ORIGINS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
@@ -137,3 +138,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.User'
