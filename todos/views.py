@@ -21,4 +21,4 @@ class TodoViewSet(ModelViewSet):
     lookup_field = 'id'
 
     def get_queryset(self):
-        self.queryset.objects.filter(user=self.request.user)
+        self.queryset.filter(user=self.request.user)
