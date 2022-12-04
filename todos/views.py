@@ -11,7 +11,7 @@ from todos.models import Todo
 class TodoSerializer(ModelSerializer):
     class Meta:
         model = Todo
-        fields = ('id', 'title', 'detail', 'status', 'user')
+        fields = ('id', 'title', 'detail', 'status',)
 
     def save(self, **kwargs):
         super().save(**{
